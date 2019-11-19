@@ -1,73 +1,52 @@
-// JavaScript operators
+// functions
 /*
 
-1. Assignment operators
-    =
-    +=
-    -=
-    *=
-    /=
-    %=
-    <<=
-    >>=
+1. In built functions
+2. Custom functions of user defined functions
 
-2. Comparison operators
-    ==
-    !=
-    ===
-    !==
-    >
-    >=
-    <
-    <=
+    // definition (declaration)
 
-3. Arithmatic operatos
-    ++ increment
-    -- decrement 
+    function functionName(parameters){
+        // this is the body of a function
+        ...
+        ...
 
-    pre increment 
-    post increment
-    
-4. Bitwise operator
-    Operands binary values
+        return value;
+    }
 
-    AND
-    OR
-    NOT (ONE OPERAND)
-    XOR
-    SHIFT
+    function add(a,b){
+        return a+b;
+    }
 
-    X = 2 = 0010
-    Y = 3 = 0011
-    ------------
-        OR  0011  = 3
-        AND 0010  = 2
-        XOR 0001  = 1
+    // evensum : name of function
+    // array : parameter
 
-    ~ X;
-    ~ 0010  = 1 101 (SIGNE)
+    function evenSum(array){
+        var sum = 0;
+        if(array != undefined){
+            for(i=0;i<array.length;i++){
+                if(array[i]%2 == 0){
+                    sum = sum + array[i];
+                }
+            }
+        }
+        return sum;
+    }
 
-    SHIFT
-    << LEFT SHIFT
-        
-        X = 2 = 0010
+    name: evenSum
+    parameters: array
+    return: sum
 
-        X << 1 = 0010 << 2 => 1000
+    var a = [10,20,30];
+    evenSum(a); // invoke the evenSum function
+    // evensum : name of function
+    // a : argument
 
-    >> RIGHT SHIFT
+    // return - it will always return a single value
 
-        X = 2 = 0010
-        X >> 1 = 0001
+    // function call (invoking a function)
 
-    4. Logical Operators
-    
-        AND &&  -  (operand 1) && (operand 2) = true if both true
-        OR  ||  -  (operand 1) && (operand 2) = true if anyone true
-    
-    5. Terneay operator ( ?: )
+    // internal working of a function
 
-        expression ? "if true" : "if false"
-
-    
-
+    // WAP to generate fibonacci series
 */
