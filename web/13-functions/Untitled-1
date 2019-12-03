@@ -1,0 +1,98 @@
+for(;;){
+    // this code run in infinite
+    console.log('please stop me....');
+}
+
+while(true){
+    // this code run in infinite
+    console.log('please stop me....');
+}
+
+// Linear search ??
+
+var cities = [,,,,,,,,,,,];
+for(){
+    //
+    if( city == inputCity){
+        // yes - 
+    }
+}
+
+// sum of all the odd numbers
+
+var sum = 0 ;
+for(var i =0;i <numbers.length;i++){
+    console.log(sum);
+    if(numbers[i] % 2 == 0){
+        continue;
+    }
+    sum = sum + numbers[i]
+}
+
+// immediately
+
+// home work for me
+
+for(initalizer; condition; final-expression)
+
+//initalizer - can fit here
+for(i=i; i<n.length; i++){
+    // do something useful here
+    print n[i];
+    i++;
+}
+
+1. initalizer
+2. loop condition
+3. block of code inside the loop
+4. final expression
+5. start froom step 2for(;;){
+    // this code run in infinite
+    console.log('please stop me....');
+}
+
+while(true){
+    // this code run in infinite
+    // console.log('please stop me....');
+}
+
+Linear search ??
+
+var cities = [,,,,,,,,,,,];
+for(){
+    //
+    if( city == inputCity){
+        // yes - 
+    }
+}
+
+
+// sum of all the odd numbers
+
+var sum = 0 ;
+for(var i =0;i <numbers.length;i++){
+    console.log(sum);
+    if(numbers[i] % 2 == 0){
+        continue;
+    }
+    sum = sum + numbers[i]
+}
+
+// immediately
+
+// home work for me
+
+for(initalizer; condition; final-expression)
+
+//initalizer - can fit here
+for(i=i; i<n.length; i++){
+    // do something useful here
+    print n[i];
+    i++;
+}
+
+1. initalizer
+2. loop condition
+3. block of code inside the loop
+4. final expression
+5. start froom step 2

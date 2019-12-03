@@ -1,0 +1,18 @@
+function big(){
+    var x  = { val: 20 } ;
+    f1(x);
+    f2(x);
+    f3(x);
+}
+function f1(x){
+    console.log(x);
+}
+function f2(x){
+    console.log(x);
+}
+function f3(x){
+    console.log(x);
+}
+big();
+// x not Defined
+// this is not equal to undefined

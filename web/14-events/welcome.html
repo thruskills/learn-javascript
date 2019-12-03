@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome firstname lastname!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+   <h1>Welcome firstname lastname!</h1> 
+
+   <script>
+       var fname = localStorage.getItem('firstName')
+       var h1 = document.querySelector('h1');
+       var title = document.querySelector('title');
+       h1.innerText = 'Welcome '+ fname;
+       title.innerText = 'Welcome '+ fname;
+   </script>
+</body>
+</html>

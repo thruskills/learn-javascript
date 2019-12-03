@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event bubbling &amp; capturing</title>
+    <style>
+        .outer-div{
+            width: 100%;
+            height: 250px;
+            background-color: red;
+        }
+
+        .inner-div{
+            width: 100%;
+            height: 150px;
+            background-color: blue;
+        }
+
+        p{
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <div class="outer-div">
+        <div class="inner-div">
+            <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or less. We'll tell you if your guess was too high or too low.</p>
+        </div>
+    </div>
+    <script>
+        var outerDiv = document.querySelector('.outer-div');
+        var innerDiv = document.querySelector('.inner-div');
+        var p = document.querySelector('p');
+
+        p.onclick = function(e){
+            alert('clicked on p');
+        }
+
+        innerDiv.onclick = function(e){
+            alert('clicked on innerDiv');
+        }
+
+        outerDiv.onclick = function(e){
+            alert('clicked on outerDiv');
+        }
+    </script>
+  </body>
+</html>
