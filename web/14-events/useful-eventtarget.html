@@ -6,7 +6,7 @@
     <style>
       div {
         background-color: red;
-        height: 100px;
+        height: 150px;
         width: 25%;
         float: left;
       }
@@ -16,6 +16,7 @@
     <script>
       for(var i = 1; i <= 16; i++) {
         var myDiv = document.createElement('div');
+        myDiv.setAttribute('id', i);
         document.body.appendChild(myDiv);
       }
 
