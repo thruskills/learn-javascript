@@ -1,16 +1,76 @@
-Person {
-    name
+// JSON - JavaScript Object Notation
+
+databases
+used with API
+intermediate format for data exchange
+
+
+var person2 = {
+    "name":"Gupta",
+    "gender":"Male"
 }
 
-Student extends Person{
+// syntax
 
+{
+    "name":"Manohar",
+    "gender":"M"
 }
 
 
-s1 = new Student();
+Website 
+    UI
+        http protocol
+        XML -> JSON
+    API
+Database
 
-// s1.name ?? dig 
+<xml>
+    <name>Manohar</name>
+    <gender>Male</gender>
+</xml>
 
-// 
 
-s1.__proto__ // prototype - link to its parent
+JSON - composite data types
+    Array       []
+    Object      {}
+
+{
+    "key":value,
+    ....,
+    ....,
+    ....,
+}
+
+{
+    "name":"manohar",
+    "age":12213,
+    "interestes":["a","b","c"]
+}
+
+[
+    {
+        "name":"manohar",
+        "age":12213,
+        "interestes":["a","b","c"]
+    },
+    {
+        "name":"manohar",
+        "age":12213,
+        "interestes":["a","b","c"]
+    }
+]
+
+var str = String("");
+
+"{"name":"manohar","age":12213"}"
+
+{
+    "name":{
+        "first":"manohar",
+        "last":"negi",
+    }
+}
+
+// crockford
+// good parts ugly part
