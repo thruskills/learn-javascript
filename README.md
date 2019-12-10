@@ -1,25 +1,76 @@
-# learn-javascript
+// JSON - JavaScript Object Notation
 
-## Day 8
+databases
+used with API
+intermediate format for data exchange
 
-function handleClick(event){
-    // implement the click functionality here
-    // event - event.target
+
+var person2 = {
+    "name":"Gupta",
+    "gender":"Male"
 }
 
-var btn = document.getelementbyId('btn');
-btn.onclick = handleClick;
+// syntax
 
-// anonymous function
-var btn = document.getelementbyId('btn');
-btn.onclick = function(){
-    /// 
+{
+    "name":"Manohar",
+    "gender":"M"
 }
 
-// event handling
 
-function sum(a,b){ // parameters a and b
-    return a+b;
+Website 
+    UI
+        http protocol
+        XML -> JSON
+    API
+Database
+
+<xml>
+    <name>Manohar</name>
+    <gender>Male</gender>
+</xml>
+
+
+JSON - composite data types
+    Array       []
+    Object      {}
+
+{
+    "key":value,
+    ....,
+    ....,
+    ....,
 }
 
-sum(10,30);// 10 and 30 are reference
+{
+    "name":"manohar",
+    "age":12213,
+    "interestes":["a","b","c"]
+}
+
+[
+    {
+        "name":"manohar",
+        "age":12213,
+        "interestes":["a","b","c"]
+    },
+    {
+        "name":"manohar",
+        "age":12213,
+        "interestes":["a","b","c"]
+    }
+]
+
+var str = String("");
+
+"{"name":"manohar","age":12213"}"
+
+{
+    "name":{
+        "first":"manohar",
+        "last":"negi",
+    }
+}
+
+// crockford
+// good parts ugly part

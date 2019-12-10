@@ -11,7 +11,7 @@
         }
 
         .inner-div{
-            width: 100%;
+            width: 90%;
             height: 150px;
             background-color: blue;
         }
@@ -38,6 +38,7 @@
         }
 
         innerDiv.onclick = function(e){
+            e.stopPropagation();
             alert('clicked on innerDiv');
         }
 
