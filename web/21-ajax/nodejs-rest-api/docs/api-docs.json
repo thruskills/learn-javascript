@@ -1,0 +1,254 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Sample REST API.",
+		"version": "1.0.0",
+		"title": "Project API",
+		"contact": {}
+	},
+	"host": "",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "projects",
+			"description": "Projects API",
+			"externalDocs": {
+				"description": "Find out more creating and managing projects here"
+			}
+		}
+	],
+	"paths": {
+		"/projects": {
+			"get": {
+				"tags": [
+					"projects"
+				],
+				"summary": "List projects",
+				"description": "Lists all the project.",
+				"operationId": "listProjects",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Successfull signup",
+						"content": {
+							"application/json": {
+								"status": 200,
+								"message": "Successfully User Created"
+							}
+						}
+					},
+					"401": {
+						"description": "Data not passed"
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"projects"
+				],
+				"summary": "Create project",
+				"description": "Creates a new project.",
+				"operationId": "createProject",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "User Details",
+						"required": true,
+						"schema": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"alias": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								},
+								"githubUrl": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successfull signup",
+						"content": {
+							"application/json": {
+								"status": 200,
+								"message": "Successfully User Created"
+							}
+						}
+					},
+					"401": {
+						"description": "Data not passed"
+					}
+				}
+			}
+		},
+		"/projects/{id}": {
+			"get": {
+				"tags": [
+					"projects"
+				],
+				"summary": "Find projects by ID",
+				"description": "Returns a single project",
+				"operationId": "getProjectById",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "ID of project to return",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Project"
+						}
+					},
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "Project not found"
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"projects"
+				],
+				"summary": "Updates a project",
+				"description": "",
+				"operationId": "updateProject",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "ID of project that needs to be updated",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"description": "User Details",
+						"required": true,
+						"schema": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"alias": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								},
+								"githubUrl": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successfull signup",
+						"content": {
+							"application/json": {
+								"status": 200,
+								"message": "Successfully User Created"
+							}
+						}
+					},
+					"401": {
+						"description": "Data not passed"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"projects"
+				],
+				"summary": "Deletes a project",
+				"description": "",
+				"operationId": "deleteProject",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Project id to delete",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Delete Successful",
+						"content": {
+							"application/json": {
+								"message": "deleted successfully"
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "Project not found"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Project": {
+			"type": "object",
+			"required": [
+				"name"
+			],
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"alias": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"githubUrl": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
