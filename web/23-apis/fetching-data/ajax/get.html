@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+   
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+
+<script>
+
+  var xhttp = new XMLHttpRequest();
+  // open(method, url, async) 	Specifies the type of request
+      // method: the type of request: GET or POST
+      // url: the server (file) location
+      // async: true (asynchronous) or false (synchronous)
+  // send() 	Sends the request to the server (used for GET)
+  // send(string) 	Sends the request to the server (used for POST)
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  function loadDoc() {
+    xhttp.open("GET", "http://calctest.iesim.biz/operations", true);
+    xhttp.send();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+Math.max.apply(Math, [-1, 5, 11, 3])

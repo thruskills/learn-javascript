@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+
+  xhttp.open("POST", "https://api.zinetgo.com/login", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+
+  // CORS - 
+  xhttp.setRequestHeader('Access-Control-Allow-Origin','https://api.zinetgo.com');
+
+  //
+  var data = {
+    "mobile":7349082124,
+    "password":"ashu",
+    "apiKey":"1a5ee5ba-08fe-4597-871a-b497b35b1423"
+  };
+
+  
+  xhttp.send(data);
+}
+</script>
+
+</body>
+</html>
