@@ -11,9 +11,10 @@ http.createServer(function(request, response){
     // content-type, what kind of content is sent from the server
     // kind/type: html, css, javascript, image, video, text
     // MIME types ??? - for you to figure out 
-    response.writeHead(200,{'Conten-Type': 'text/html'});
+    response.writeHead(200,{'Conten-Type': 'text/plain'});
     // end this response by sending the content
-    response.end('Today is : '+ new Date());
+    response.write(request.url);
+    response.end();
 }).listen(4000);
 // once server is created, we will make it listen on port 4000
 // TCP port - range 
