@@ -7,8 +7,8 @@ const port = 3001
 app.get('/',(req,res) => res.send('Hello World!'))
 
 // about page - read about.html and send back to client
-app.get('/about',(req,res) => {
-    fs.readFile('about.html', (error, data) => {
+app.get('/signin',(req,res) => {
+    fs.readFile('signin.html', (error, data) => {
         if(error){
             res.send(error.message)
         }else{
