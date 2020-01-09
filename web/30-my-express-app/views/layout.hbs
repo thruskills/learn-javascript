@@ -6,9 +6,9 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="active">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <a href="/" class="{{#if indexNav}}active{{/if}}">Home</a>
+      <a href="/about" class="{{#if aboutNav}}active{{/if}}">About</a>
+      <a href="/contact" class="{{#if contactNav}}active{{/if}}">Contact</a>
     </nav>
     {{{body}}}
   </body>
