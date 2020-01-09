@@ -29,10 +29,10 @@ Extra requirements
 
 ## Contact          /contact
 
-## Page Layouts
+### Page Layouts
 You will have to create two layouts. One for the grid view and another for sidebar.
 
-## Header
+### Header
 You will have the following
     1. Brand icon/name pointing to /
     2. Projects
@@ -40,7 +40,7 @@ You will have the following
     4. About
     5. Contact
 
-## Footer
+### Footer
 You will have the following
     1. Brand icon/name pointing to /
     2. Links section
