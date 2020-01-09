@@ -1,12 +1,12 @@
-# Thruskill Full stack Project Timelines
-Winner (1000 Rs amazon voucher - each)
-Submission date ( TBD )
+# Thruskills Full stack Project Timelines
+    - Winner (1000 Rs amazon voucher - each)
+    - Submission date ( TBD )
 
 ## Projects
-    1. My pofo - public pages (database)
+    1. My portfolio
     2. Dashboard
     3. API
-    4. Mypofo - with React
+    4. My portfolio - with React
 
 ### Team 1
     - Shashwat
