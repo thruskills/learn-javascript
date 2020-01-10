@@ -3,7 +3,7 @@
 ## Pages to build 
 
 | #  | Page             | Route             |
-|-----------------------|-------------------|
+|----|------------------|-------------------|
 | 1  | Home             | /                 |
 | 2  | Projects         | /projects         |
 | 3  | Project Detail   | /projects/:title  |
