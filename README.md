@@ -11,7 +11,7 @@
 ## Submission dates
 | Project                            | Code Submission Date | Demo Date    | Result Date    |
 |------------------------------------|----------------------|--------------|----------------|
-| My portfolio using Express.js      | 20 Jan 2020          | 21 Jan 2020  | 24 Jan 2020    |
+| [My portfolio using Express.js](https://github.com/thruskills/learn-javascript/blob/day-27/project-1-my-portfolio-using-express.md)      | 20 Jan 2020          | 21 Jan 2020  | 24 Jan 2020    |
 | Admin Dashboard                    | 27 Jan 2020          | 28 Jan 2020  | 31 Jan 2020    |
 | REST API                           | 03 Feb 2020          | 04 Feb 2020  | 07 Feb 2020    |
 | My portfolio using React.js        | 10 Feb 2020          | 11 Feb 2020  | 14 Feb 2020    |
