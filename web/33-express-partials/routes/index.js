@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const { check, validationResult } = require('express-validator');
+
 const data = [
   {
     title: 'My portfolio with Express.js',
@@ -24,14 +26,22 @@ const data = [
   }
 ];
 
+
 /* GET home page. */
+router.get('/',function(req,res){
+  res.render('index')
+})
+
 router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Express', projects: data, extraHtml :'<p>Welcome to express</p>'});
+  res.render('projects', { title: 'Express', projects: data, extraHtml :'<p>Welcome to express</p>'});
 });
 
 router.get('/projects/:id', function(req, res){
   let id = parseInt(req.params.id);
   console.log('id --- > ', typeof id);
+  //  once you got the project id
+  // make the database call to check if it exists
+  
   if(id < data.length ){
     res.render('project-detail', { data : data[id] })
   }else{
@@ -41,4 +51,34 @@ router.get('/projects/:id', function(req, res){
   }
 })
 
+
+router.get('/contact', function(req, res){
+  res.render('contact');
+})
+
+router.post('/contact', [
+    check('email').isEmail().withMessage('Please enter a valid email id'),
+    check('mobile').isLength({ min: 10 }).withMessage('Mobile  number must be atleast 10 characters')
+  ],
+  function(req, res){
+    const errors = validationResult(req);
+    console.log(JSON.stringify(errors))
+    if(!errors.isEmpty()){
+      var messages = [];
+      errors.errors.forEach(function(err){
+        console.log(JSON.stringify(err))
+        messages.push(err.msg)
+      })
+      let name = req.body.name;
+      let mobile = req.body.mobile;
+      let email = req.body.email;
+      let description = req.body.description;
+
+      res.render('contact', {errors: true, messages: messages, name, mobile, email, description});
+    }else{
+      // read the values and save it in the DB
+
+      res.render('contact', {success: true});
+    }
+})
 module.exports = router;
