@@ -1,31 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const { check, validationResult } = require('express-validator');
-
-const data = [
-  {
-    title: 'My portfolio with Express.js',
-    description: 'Portfolio project using Node and Express. We will use HBS template engine.',
-    image: '/images/1.jpg',
-    link: '/projects/0'
-  },{
-    title: 'Dashboard',
-    description: 'Build an admin dashboard to manage my portfolio. Again, we will be using node and express',
-    image: '/images/2.jpg',
-    link: '/projects/1'
-  },{
-    title: 'REST API',
-    description: 'Here, we will build REST based API to interact with the MongoDB.',
-    image: '/images/3.jpg',
-    link: '/projects/2'
-  },{
-    title: 'My portfolio with React.js',
-    description: 'Portfolio project using React.js.',
-    image: '/images/4.jpg',
-    link: '/projects/3'
-  }
-];
-
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
 
 /* GET home page. */
 router.get('/',function(req,res){
@@ -33,22 +10,34 @@ router.get('/',function(req,res){
 })
 
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Express', projects: data, extraHtml :'<p>Welcome to express</p>'});
+  MongoClient.connect(url, function(err, db){
+    if (err) throw err;
+    let dbo = db.db("portfolio");
+    let d = new Date();
+    dbo.collection('projects').find({}).toArray(function(err, data){
+      if (err) throw err;
+      console.log(JSON.stringify(data));
+      db.close();
+      res.render('projects', { title: 'Express', projects: data, extraHtml :'<p>Welcome to express</p>'});
+    })
+  });
 });
 
 router.get('/projects/:id', function(req, res){
-  let id = parseInt(req.params.id);
-  console.log('id --- > ', typeof id);
+  let id = req.params.id;
+  console.log('id --- > ',  id);
   //  once you got the project id
   // make the database call to check if it exists
-  
-  if(id < data.length ){
-    res.render('project-detail', { data : data[id] })
-  }else{
-    // 404 
-    console.log('page not found')
-    res.send('Page not found')
-  }
+  MongoClient.connect(url, function(err, db){
+    if (err) throw err;
+    let dbo = db.db("portfolio");
+    dbo.collection('projects').findOne({_id: id}, function(err, project){
+      if (err) throw err;
+      console.log(JSON.stringify(project));
+      db.close();
+      res.render('project-detail', { data : project })
+    })
+  });
 })
 
 
@@ -69,16 +58,26 @@ router.post('/contact', [
         console.log(JSON.stringify(err))
         messages.push(err.msg)
       })
+      res.render('contact', {errors: true, messages: messages, name, mobile, email, description});
+    }else{
+      // read the values and save it in the DB
       let name = req.body.name;
       let mobile = req.body.mobile;
       let email = req.body.email;
       let description = req.body.description;
 
-      res.render('contact', {errors: true, messages: messages, name, mobile, email, description});
-    }else{
-      // read the values and save it in the DB
-
-      res.render('contact', {success: true});
+      MongoClient.connect(url, function(err, db){
+        if (err) throw err;
+        let dbo = db.db("portfolio");
+        let d = new Date();
+        let contact = {name, mobile, email, message: description, date_created: d, date_modified: d};
+        dbo.collection('contact').insertOne(contact, function(err, contactObj){
+          if (err) throw err;
+          console.log("1 document inserted. Id = " + contactObj._id);
+          db.close();
+          res.render('contact', {success: true});
+        })
+      });
     }
 })
 module.exports = router;
