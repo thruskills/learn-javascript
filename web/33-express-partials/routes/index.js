@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const { check, validationResult } = require('express-validator');
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
+
 var url = "mongodb://localhost:27017/";
 
 /* GET home page. */
@@ -31,7 +33,7 @@ router.get('/projects/:id', function(req, res){
   MongoClient.connect(url, function(err, db){
     if (err) throw err;
     let dbo = db.db("portfolio");
-    dbo.collection('projects').findOne({_id: id}, function(err, project){
+    dbo.collection('projects').findOne({_id: new ObjectId(id)}, function(err, project){
       if (err) throw err;
       console.log(JSON.stringify(project));
       db.close();

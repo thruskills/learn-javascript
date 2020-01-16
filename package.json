@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/thruskills/learn-javascript/issues"
   },
-  "homepage": "https://github.com/thruskills/learn-javascript#readme"
+  "homepage": "https://github.com/thruskills/learn-javascript#readme",
+  "dependencies": {
+    "mongodb": "^3.5.0"
+  }
 }
