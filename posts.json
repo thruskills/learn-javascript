@@ -1,0 +1,36 @@
+[{
+		"title": "Learn Node.js",
+		"image": "https://www.mypofo.com/images/blog/building-a-static-portfolio-site-using-bootstrap-4.jpg",
+		"content": "In this project you will build a small number guessing game. System will select a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.",
+		"date_created": new Date(),
+		"date_modified": new Date()
+	},
+	{
+		"title": "Learn Express.js",
+		"image": "https://www.mypofo.com/images/blog/rewrite-the-static-site-using-node-express-handlebars.jpg",
+		"content": "In this project you will build a small number guessing game. System will select a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.",
+		"date_created": new Date(),
+		"date_modified": new Date()
+	},
+	{
+		"title": "Learn React.js",
+		"image": "https://www.mypofo.com/images/blog/build-all-the-pages-and-layouts.jpg",
+		"content": "In this project you will build a small number guessing game. System will select a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.",
+		"date_created": new Date(),
+		"date_modified": new Date()
+	},
+	{
+		"title": "Learn REST API",
+		"image": "https://www.mypofo.com/images/blog/design-the-database-using-mongodb.jpg",
+		"content": "In this project you will build a small number guessing game. System will select a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.",
+		"date_created": new Date(),
+		"date_modified": new Date()
+	},
+    {
+		"title": "Learn AWS",
+		"image": "https://www.mypofo.com/images/blog/fetch-data-from-mongodb-in-express.jpg",
+		"content": "In this project you will build a small number guessing game. System will select a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.",
+		"date_created": new Date(),
+		"date_modified": new Date()
+	}
+]

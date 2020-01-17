@@ -8,7 +8,23 @@ var url = "mongodb://localhost:27017/";
 
 /* GET home page. */
 router.get('/',function(req,res){
-  res.render('index')
+  MongoClient.connect(url, function(err, db){
+    if (err) throw err;
+    let dbo = db.db("portfolio");
+    let d = new Date();
+    // get the projects
+    dbo.collection('projects').find({}).limit(3).toArray(function(err, projects){
+        if (err) throw err;
+        console.log(JSON.stringify(projects));
+        // get the posts
+        dbo.collection('posts').find({}).sort({'date_created': -1}).limit(3).toArray(function(err, posts){
+            if (err) throw err;
+            console.log(JSON.stringify(posts));
+            db.close();
+            res.render('index', {projects: projects, posts: posts})
+        })
+    })
+  });
 })
 
 router.get('/projects', function(req, res, next) {

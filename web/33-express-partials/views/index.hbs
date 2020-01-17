@@ -1,1 +1,67 @@
-<h1>Welcome to my portfolio</h1>
+<div class="row" style="padding: 20px 0px;">
+    <div class="col-md-9">
+        <h1>Hi! I'm Manohar.</h1>
+        <p>I share my love of startups, photography, travel and technology with in-depth blog series and photo stories.</p>
+    </div>
+    <div class="col-md-3">
+        <img class="img-fluid" src="https://www.mypofo.com/images/manohar.jpg">
+    </div>
+</div>
+
+<!-- Start: Recent projects -->
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h2>Recent Projects</h2>
+    </div>
+    <div class="col-md-3 text-right">
+        <a href="/projects">View All</a>
+    </div>
+</div>
+
+<div class="row" style="padding: 20px 0px;">
+    <!-- render the projects you got from the server -->
+    {{#each projects}}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/projects/{{_id}}">
+                    <img src="{{image}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <a href="/projects/{{_id}}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<!-- End: Recent projects -->
+
+<!-- Start: Recent posts -->
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h2>Recent Posts</h2>
+    </div>
+    <div class="col-md-3 text-right">
+        <a href="/blog">View All</a>
+    </div>
+</div>
+<div class="row" style="padding: 20px 0px;">
+    <!-- render the projects you got from the server -->
+    {{#each posts}}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/projects/{{_id}}">
+                    <img src="{{image}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <a href="/blog/{{_id}}">
+                        <h5 class="card-title">{{title}}</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
