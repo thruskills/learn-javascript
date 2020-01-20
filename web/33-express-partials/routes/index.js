@@ -27,6 +27,36 @@ router.get('/',function(req,res){
   });
 })
 
+router.post('/subscribe',function(req,res){
+  let email = req.body.email;
+  console.log(email);
+  if(email && email !== ''){
+    MongoClient.connect(url, function(err, db){
+      if (err) throw err;
+      let dbo = db.db("portfolio");
+      let d = new Date();
+      let newsletter = {email, date_created: d};
+      dbo.collection('newsletter').insertOne(newsletter, function(err, obj){
+        if(err) throw err;
+        // get the projects
+        dbo.collection('projects').find({}).limit(3).toArray(function(err, projects){
+          if (err) throw err;
+          console.log(JSON.stringify(projects));
+          // get the posts
+          dbo.collection('posts').find({}).sort({'date_created': -1}).limit(3).toArray(function(err, posts){
+              if (err) throw err;
+              console.log(JSON.stringify(posts));
+              db.close();
+              res.render('index', {projects: projects, posts: posts, success: true})
+          })
+        })
+      })
+    });
+  }// else block... you can 
+
+})
+
+
 router.get('/projects', function(req, res, next) {
   MongoClient.connect(url, function(err, db){
     if (err) throw err;

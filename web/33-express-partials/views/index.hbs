@@ -11,6 +11,23 @@
 <!-- Start: Recent projects -->
 <hr>
 <div class="row">
+    <div class="col-md-6">
+        <h2>Subscribe to my newsletter</h2>
+    </div>
+    <div class="col-md-6 text-right">
+        <form action='/subscribe' method="POST">
+            <input type="email" name="email">
+            <button>Subscribe</button>
+        </form>
+        {{#if success}}
+        <p class="text-success">Subscribed successfully</p>
+        {{/if}}
+    </div>
+</div>
+
+<!-- Start: Recent projects -->
+<hr>
+<div class="row">
     <div class="col-md-9">
         <h2>Recent Projects</h2>
     </div>
