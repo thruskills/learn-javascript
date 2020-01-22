@@ -1,0 +1,20 @@
+<h1>List of projects</h1>
+<table>
+    <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    {{#each projects}}
+    <tr>
+        <td><img src="{{image}}" width="50" height="50"></td>
+        <td>{{title}}</td>
+        <td>{{description}}</td>
+        <td>
+            <a href="/projects/{{_id}}">Details</a>
+            <a href="/projects/{{_id}}">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
