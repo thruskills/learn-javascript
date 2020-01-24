@@ -1,4 +1,12 @@
-<h1>List of projects</h1>
+<div class="row">
+    <div class="col-md-8">
+        <h1>List of projects</h1>
+    </div>
+    <div class="col-md-4 text-right">
+        <a href="/projects/new" class="btn btn-primary">Create New</a>
+    </div>
+</div>
+
 <table>
     <tr>
         <th>Image</th>
@@ -13,7 +21,7 @@
         <td>{{description}}</td>
         <td>
             <a href="/projects/{{_id}}">Details</a>
-            <a href="/projects/{{_id}}">Delete</a>
+            <a href="/projects/{{_id}}/delete">Delete</a>
         </td>
     </tr>
     {{/each}}
