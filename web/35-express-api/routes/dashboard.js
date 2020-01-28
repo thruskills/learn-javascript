@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Project = require('../model/project');
+const Contact = require('../model/contact');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -81,5 +82,26 @@ router.delete('/projects/:id', function(req, res){
     res.json({'status': 'success', 'code':200})
   })
 });
+
+// contact
+router.get('/contacts', function(req, res, next) {
+  Contact.find({}, function(err, data){
+    if (err) throw Error;
+    console.log(JSON.stringify(data));
+    res.setHeader('Content-Type','application/json');
+    res.json(data)
+  })
+});
+
+router.post('/contacts', function(req, res){
+  console.log('creating new contact ....')
+  var newContact = new Contact(req.body);
+  newContact.save(function(err, data){
+    if (err) throw Error;
+    console.log(JSON.stringify(data));
+    res.json({'status': 'success', 'code':201, 'id': data._id})
+  })
+});
+
 
 module.exports = router;
