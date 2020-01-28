@@ -61,15 +61,16 @@ router.post('/projects', function(req, res){
 
 // find and update
 router.put('/projects/:id', function(req, res){
-  let id = req.params.id;
-  var updateProject = new Project(req.body);
-  console.log(JSON.stringify(updateProject));
-  Project.findByIdAndUpdate({_id: id}, {$set: updateProject},function(err, data){
-    if (err) throw Error;
-    console.log(JSON.stringify(data));
-    res.json({'status': 'success', 'code':204, 'id': data._id})
-  })
-})
+  var id = req.params.id;
+  Project.findOneAndUpdate({_id: id},{$set:req.body,$inc:{__v:1}},{new:true}, 
+    function(err, project){
+    if(err){
+      next(err);
+    }else{
+      res.json(project); 
+    }
+  });
+});
 
 // delete
 router.delete('/projects/:id', function(req, res){
@@ -79,8 +80,6 @@ router.delete('/projects/:id', function(req, res){
     console.log(JSON.stringify(data));
     res.json({'status': 'success', 'code':200})
   })
-})
-
-
+});
 
 module.exports = router;
