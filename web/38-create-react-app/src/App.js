@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import NavComponent from './components/children/NavComponent';
+import ShallowComponent from './components/state/State';
 
 import './App.css';
 
 function App() {
   return (
     <div>
-      <NavComponent />
+      <ShallowComponent />
     </div>
   );
 }
