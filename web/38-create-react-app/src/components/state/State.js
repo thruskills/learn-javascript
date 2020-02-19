@@ -13,7 +13,10 @@ class ShallowComponent extends React.Component {
         products: [ /*...*/ ] 
     }
 
+    // event is SyntheticEvent
     handleUpdate = (event) =>{
+        console.log(event.target);
+
         this.setState({
             //score: this.state.score + Math.random() * 10
             user: {name:'Balaji'}

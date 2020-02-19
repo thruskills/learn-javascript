@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import ShallowComponent from './components/state/State';
+import Layout from './components/layoutt/layout';
 
 import './App.css';
 
 function App() {
   return (
     <div>
-      <ShallowComponent />
+      <Layout />
     </div>
   );
 }
