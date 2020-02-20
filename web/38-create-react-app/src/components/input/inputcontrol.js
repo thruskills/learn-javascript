@@ -12,7 +12,8 @@ class Example extends React.Component {
     }
     render(){
         return(
-            <input type="text" value={this.state.text} onChange={this.handleChange} />
+            <input type="text" value={this.state.text} 
+            onChange={this.handleChange} />
         )
     }
 }

@@ -8,7 +8,8 @@ class RefComponent extends React.Component{
     render(){
         return(
             <div>
-                <input type="text" defaultValue="React" ref={input => this.data = input} />
+                <input type="text" defaultValue="React" 
+                ref={input => this.data = input} />
                 <button onClick={this.showValue}>
                     Display Value
                 </button>
