@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // 1. imporrt the module
 const mongoose = require('mongoose');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var dashboardRouter = require('./routes/dashboard');
@@ -17,6 +18,8 @@ mongoose.connect('mongodb://localhost:27017/portfolio', {useNewUrlParser: true})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
