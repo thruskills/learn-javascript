@@ -1,16 +1,17 @@
 import React from 'react';
 
 function Project(props){
-    
+    console.log(props.id)
+    let link = `/projects/${props.id}`;
     return (
         <div className="card" style={{width: "18rem"}}>
-            <a href={props.id}>
+            <a href={link}>
                 <img src={props.image} className="card-img-top" alt="..." />
             </a>
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.description}</p>
-                <a href={props.id} className="btn btn-primary">View Details</a>
+                <a href={link} className="btn btn-primary">View Details</a>
             </div>
         </div>
     )
@@ -62,7 +63,7 @@ class Projects extends React.Component{
                     {
                         projects.data.map(project => (
                             <div className="col-md-4" key={project._id} >
-                                <Project id={project.id} image="/images/1.jpg" title={project.title} description={project.description}/>
+                                <Project id={project._id} image="/images/1.jpg" title={project.title} description={project.description}/>
                             </div>
                         ))
                     }
