@@ -38,7 +38,7 @@ class ProjectDetail extends React.Component {
             return <div>Loading...</div>;
         } else{
             return(
-                <div className="container">
+                <div>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item bc-item"><a href="/">Home</a></li>

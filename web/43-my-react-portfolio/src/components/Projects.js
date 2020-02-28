@@ -62,8 +62,8 @@ class Projects extends React.Component{
                 <div className="row">
                     {
                         projects.data.map(project => (
-                            <div className="col-md-4" key={project._id} >
-                                <Project id={project._id} image="/images/1.jpg" title={project.title} description={project.description}/>
+                            <div className="col-md-4" key={project._id} style={{paddingTop: "20px"}}>
+                                <Project id={project._id} image={project.image} title={project.title} description={project.description}/>
                             </div>
                         ))
                     }
